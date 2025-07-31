@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VELLORE DIGITAL Portfolio - Explore our successful projects and implementations">
+    <title>Portfolio - VELLORE DIGITAL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            200: '#fed7aa',
+                            300: '#fdba74',
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            800: '#9a3412',
+                            900: '#7c2d12',
+                        },
+                        accent: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Lexend', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="text-2xl font-display font-bold text-primary-600">VELLORE <span class="text-secondary-500">DIGITAL</span></span>
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden flex items-center p-2 rounded-md text-gray-600 hover:text-primary-600 hover:bg-gray-100 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <!-- Desktop menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-600 font-medium hover:text-primary-600 transition-all">Home</a>
+                <a href="services.html" class="text-gray-600 font-medium hover:text-primary-600 transition-all">Services</a>
+                <a href="portfolio.html" class="text-primary-600 font-medium hover:text-primary-700 transition-all">Portfolio</a>
+                <a href="about.html" class="text-gray-600 font-medium hover:text-primary-600 transition-all">About</a>
+                <a href="contact.html" class="text-gray-600 font-medium hover:text-primary-600 transition-all">Contact</a>
+                <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">Get Started</a>
+            </div>
+        </nav>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary-600 hover:bg-gray-50">Home</a>
+                <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary-600 hover:bg-gray-50">Services</a>
+                <a href="portfolio.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary-600 bg-gray-50">Portfolio</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary-600 hover:bg-gray-50">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary-600 hover:bg-gray-50">Contact</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium bg-secondary-500 text-white hover:bg-secondary-600 mt-4">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-primary-700 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-display font-bold mb-6">Our Portfolio</h1>
+                <p class="text-xl md:text-2xl mb-8">Explore how VELLORE DIGITAL has transformed development workflows for teams around the world.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Filters -->
+    <section class="py-8 bg-white border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="portfolio-filter active bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700 transition-all" data-filter="all">All Projects</button>
+                <button class="portfolio-filter bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition-all" data-filter="web-app">Web Applications</button>
+                <button class="portfolio-filter bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition-all" data-filter="enterprise">Enterprise Solutions</button>
+                <button class="portfolio-filter bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition-all" data-filter="mobile">Mobile Integration</button>
+                <button class="portfolio-filter bg-gray-200 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-300 transition-all" data-filter="ai">AI Projects</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all" data-category="web-app">
+                    <img src="https://via.placeholder.com/600x400/0ea5e9/ffffff?text=CodeFlow+IDE" alt="CodeFlow IDE" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-primary-900 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">CodeFlow IDE</h3>
+                        <p class="text-center mb-4">A modern web-based IDE with real-time collaboration features powered by VELLORE DIGITAL.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">WebSockets</span>
+                        </div>
+                        <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all" data-category="enterprise">
+                    <img src="https://via.placeholder.com/600x400/0c4a6e/ffffff?text=Enterprise+Hub" alt="Enterprise Hub" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-primary-900 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Enterprise Hub</h3>
+                        <p class="text-center mb-4">A comprehensive enterprise solution for managing development workflows and team collaboration.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Angular</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Java</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                        </div>
+                        <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all" data-category="mobile">
+                    <img src="https://via.placeholder.com/600x400/22c55e/ffffff?text=Mobile+Companion" alt="Mobile Companion" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-primary-900 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Mobile Companion</h3>
+                        <p class="text-center mb-4">A mobile app that integrates with VELLORE DIGITAL to provide on-the-go code reviews and suggestions.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">React Native</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">GraphQL</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Firebase</span>
+                        </div>
+                        <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all" data-category="ai">
+                    <img src="https://via.placeholder.com/600x400/f97316/ffffff?text=AI+Code+Assistant" alt="AI Code Assistant" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-primary-900 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">AI Code Assistant</h3>
+                        <p class="text-center mb-4">An advanced AI-powered code assistant that provides intelligent suggestions and autocompletions.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">NLP</span>
+                        </div>
+                        <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all" data-category="web-app">
+                    <img src="https://via.placeholder.com/600x400/0ea5e9/ffffff?text=Code+Review+Platform" alt="Code Review Platform" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-primary-900 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Code Review Platform</h3>
+                        <p class="text-center mb-4">A collaborative platform for code reviews with AI-powered suggestions and automated checks.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Go</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all" data-category="enterprise">
+                    <img src="https://via.placeholder.com/600x400/0c4a6e/ffffff?text=DevOps+Integrator" alt="DevOps Integrator" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-primary-900 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">DevOps Integrator</h3>
+                        <p class="text-center mb-4">A comprehensive solution for integrating AI-powered code analysis into CI/CD pipelines.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Docker</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Kubernetes</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Jenkins</span>
+                        </div>
+                        <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 7 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all" data-category="ai">
+                    <img src="https://via.placeholder.com/600x400/f97316/ffffff?text=Security+Scanner" alt="Security Scanner" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-primary-900 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Security Scanner</h3>
+                        <p class="text-center mb-4">An AI-powered security scanner that identifies vulnerabilities and suggests secure coding practices.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">OWASP</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">ML</span>
+                        </div>
+                        <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 8 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all" data-category="mobile">
+                    <img src="https://via.placeholder.com/600x400/22c55e/ffffff?text=Cross-Platform+SDK" alt="Cross-Platform SDK" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-primary-900 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Cross-Platform SDK</h3>
+                        <p class="text-center mb-4">A software development kit that enables VELLORE DIGITAL integration across multiple platforms and devices.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Flutter</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Kotlin</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Swift</span>
+                        </div>
+                        <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 9 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all" data-category="web-app">
+                    <img src="https://via.placeholder.com/600x400/0ea5e9/ffffff?text=Learning+Platform" alt="Learning Platform" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-primary-900 bg-opacity-80 flex flex-col justify-center items-center p-6 text-white">
+                        <h3 class="text-2xl font-bold mb-2">Learning Platform</h3>
+                        <p class="text-center mb-4">An interactive learning platform that provides personalized coding tutorials and exercises.</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">Express</span>
+                            <span class="bg-primary-700 px-3 py-1 rounded-full text-sm">MySQL</span>
+                        </div>
+                        <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-2 px-4 rounded-md transition-all">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Featured Case Studies</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Dive deeper into how VELLORE DIGITAL has helped organizations transform their development processes.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Case Study 1 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <img src="https://via.placeholder.com/800x400/0ea5e9/ffffff?text=TechCorp+Case+Study" alt="TechCorp Case Study" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">TechCorp: 40% Faster Development</h3>
+                        <p class="text-gray-600 mb-4">How TechCorp reduced development time by 40% and improved code quality with VELLORE DIGITAL's intelligent code assistance.</p>
+                        <a href="#" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
+                            Read Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Case Study 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+                    <img src="https://via.placeholder.com/800x400/22c55e/ffffff?text=InnovateSoft+Case+Study" alt="InnovateSoft Case Study" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">InnovateSoft: Scaling Development Teams</h3>
+                        <p class="text-gray-600 mb-4">How InnovateSoft used VELLORE DIGITAL to onboard new developers faster and maintain consistent code quality across teams.</p>
+                        <a href="#" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
+                            Read Case Study
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary-700 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-display font-bold mb-6">Ready to Transform Your Development Process?</h2>
+                <p class="text-xl mb-8">Join the growing list of companies that have revolutionized their coding workflow with VELLORE DIGITAL.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="bg-secondary-500 hover:bg-secondary-600 text-white font-medium py-3 px-8 rounded-md text-lg transition-all transform hover:scale-105">Try For Free</a>
+                    <a href="contact.html" class="bg-white hover:bg-gray-100 text-primary-700 font-medium py-3 px-8 rounded-md text-lg transition-all">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-1">
+                    <a href="index.html" class="flex items-center space-x-2 mb-6">
+                        <span class="text-2xl font-display font-bold text-white">trae<span class="text-secondary-500">.ai</span></span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Revolutionizing the coding experience with AI-powered assistance.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-all">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-all">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-all">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-all">Portfolio</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-all">About</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-all">AI Code Assistant</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-all">Code Refactoring</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-all">Security Analysis</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-all">Project Management</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-all">Learning Resources</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-gray-400"></i>
+                            <span class="text-gray-400">123 Innovation Street, Tech City, TC 12345</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-gray-400"></i>
+                            <span class="text-gray-400">+1 (701) 070-3850</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-gray-400"></i>
+                            <a href="mailto:ssaranmga@gmail.com" class="text-gray-400 hover:text-white transition-all">ssaranmga@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-gray-800 my-8">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">&copy; 2023 VELLORE DIGITAL. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
+</body>
+</html>

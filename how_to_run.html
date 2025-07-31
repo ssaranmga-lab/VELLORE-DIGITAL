@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Run This Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .method {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f0f9ff;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #0ea5e9;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: #0369a1;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        .note {
+            background-color: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 10px 15px;
+            margin: 15px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #0ea5e9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0284c7;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container">
+        <h1>How to Run This Website</h1>
+        <p class="mb-6">This is a static HTML/CSS/JavaScript website that doesn't require a server to run. Here are three simple methods to view the website:</p>
+        
+        <div class="method">
+            <h2>Method 1: Double-Click on index.html</h2>
+            <ol>
+                <li>Open File Explorer</li>
+                <li>Navigate to <code>D:\MY PROJECT 2\MARKETING</code></li>
+                <li>Double-click on <code>index.html</code></li>
+                <li>The website will open in your default web browser</li>
+            </ol>
+            <a href="index.html" class="button">Open index.html</a>
+        </div>
+        
+        <div class="method">
+            <h2>Method 2: Drag and Drop into Browser</h2>
+            <ol>
+                <li>Open File Explorer</li>
+                <li>Navigate to <code>D:\MY PROJECT 2\MARKETING</code></li>
+                <li>Open your web browser (Chrome, Firefox, Edge, etc.)</li>
+                <li>Drag the <code>index.html</code> file and drop it into the browser window</li>
+            </ol>
+        </div>
+        
+        <div class="method">
+            <h2>Method 3: Use File Protocol URL</h2>
+            <ol>
+                <li>Open your web browser</li>
+                <li>In the address bar, type: <code>file:///D:/MY%20PROJECT%202/MARKETING/index.html</code></li>
+                <li>Press Enter</li>
+            </ol>
+        </div>
+        
+        <div class="note">
+            <p><strong>Note:</strong> The <code>net::ERR_CONNECTION_REFUSED</code> error occurs when trying to access <code>http://localhost:8080</code> because there's no server running on that port. The methods above don't require a server and will work correctly.</p>
+        </div>
+        
+        <h2 class="mt-8">Website Navigation</h2>
+        <p>Once the website is open, you can navigate to all pages:</p>
+        <ul class="list-disc ml-6 mt-2">
+            <li><a href="index.html" class="text-primary-600 hover:underline">Home</a></li>
+            <li><a href="services.html" class="text-primary-600 hover:underline">Services</a></li>
+            <li><a href="portfolio.html" class="text-primary-600 hover:underline">Portfolio</a></li>
+            <li><a href="about.html" class="text-primary-600 hover:underline">About</a></li>
+            <li><a href="contact.html" class="text-primary-600 hover:underline">Contact</a></li>
+        </ul>
+    </div>
+</body>
+</html>
